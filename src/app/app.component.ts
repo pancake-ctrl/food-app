@@ -1,14 +1,19 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
+import { MenuCardComponent } from './menu-card/menu-card.component';
+import { FoodComponent } from './food/food.component';
+import { RouterModule } from '@angular/router';
+
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet],
+  imports: [FoodComponent, RouterModule],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrl: './app.component.scss',
+  
+  
 })
 export class AppComponent {
-  title = 'my-angular-project';
+  title = 'homes';
+  header= `Hello World`;
 }
