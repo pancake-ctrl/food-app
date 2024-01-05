@@ -1,10 +1,10 @@
   <main>
-    <a [routerLink]="['/']">
-      <header class="brand-name ">
-        <img class="brand-logo pb m-4" src="/assets/logo.svg" alt="logo" aria-hidden="true">
+    <header class="brand-name ">
+        <a [routerLink]="['/']">
+        <img class="inline-block max-w-12 pb m-4" src="/assets/logo.png" alt="logo" aria-hidden="true">
+      </a>
         <div class= "border-b-4 mb-8"></div>
       </header>
-    </a>
     <section class="content container m-auto">
       <router-outlet></router-outlet>
     </section>
