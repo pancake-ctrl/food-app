@@ -26,16 +26,16 @@ import { MenuCardComponent } from '../menu-card/menu-card.component';
 })
 
 export class FoodComponent {
-  readonly baseUrl = '/assets';
-
 
   menuDataList: MenuData [] = [];
-  filteredFoodList: MenuData [];
+  filteredFoodList: MenuData [] =[];
   informationService: InformationService = inject(InformationService)
 
   constructor() {
-    this.menuDataList = this.informationService.getAllMenuData();
-    this.filteredFoodList = this.menuDataList;
+    this.informationService.getAllMenuData().then((menuDataList: MenuData[])=>{
+      this.menuDataList = menuDataList;
+      this.filteredFoodList = menuDataList;
+    });
   }
   
   filterResults(text:String){

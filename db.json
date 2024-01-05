@@ -1,19 +1,46 @@
 {
-  "posts": [
+  "menuDataList": [
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    }
-  ],
-  "comments": [
+      "id": 9999,
+      "name": "Tacos",
+      "price": 12.99,
+      "description": "Laboris dolore voluptate duis magna incididunt ullamco nulla quis commodo consectetur. Sunt ex adipisicing adipisicing culpa elit. Ut aliqua consectetur aute est nulla est quis ad ea.",
+      "image": "/assets/taco.jpeg",
+      "availablity": true
+    },
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "id": 24324,
+      "name": "Fries",
+      "price": 7.99,
+      "description": "Laboris dolore voluptate duis magna incididunt ullamco nulla quis commodo consectetur. Sunt ex adipisicing adipisicing culpa elit. Ut aliqua consectetur aute est nulla est quis ad ea.",
+      "image": "/assets/fries.jpeg",
+      "availablity": true
+    },
+    {
+      "id": 9199,
+      "name": "Pizza",
+      "price": 15.99,
+      "description": "Laboris dolore voluptate duis magna incididunt ullamco nulla quis commodo consectetur. Sunt ex adipisicing adipisicing culpa elit. Ut aliqua consectetur aute est nulla est quis ad ea.",
+      "image": "/assets/pizza.jpeg",
+      "availablity": true
+    },
+    {
+      "id": 9929,
+      "name": "Burger",
+      "price": 11.99,
+      "description": "Laboris dolore voluptate duis magna incididunt ullamco nulla quis commodo consectetur. Sunt ex adipisicing adipisicing culpa elit. Ut aliqua consectetur aute est nulla est quis ad ea.",
+      "image": "/assets/burger.jpeg",
+      "availablity": true
+    },
+    {
+      "id": 4233,
+      "name": "Sandwich",
+      "price": 4.99,
+      "description": "Laboris dolore voluptate duis magna incididunt ullamco nulla quis commodo consectetur. Sunt ex adipisicing adipisicing culpa elit. Ut aliqua consectetur aute est nulla est quis ad ea.",
+      "image": "/assets/sandwich.jpeg",
+      "availablity": true
     }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+    
+  ]
 }
+

@@ -55,9 +55,11 @@ export class DetailsComponent {
   });
 
   constructor() {
-     const menuDataId = Number(this.route.snapshot.params['id']);
+     const menuDataId = parseInt(this.route.snapshot.params['id'], 10);
 
-      this.menuData = this.informationService.getMenuItemById(menuDataId);
+     this.informationService.getMenuItemById(menuDataId).then(menuData=>{
+      this.menuData = menuData;
+     })
   }
   submitApplication() {
     this.informationService.submitApplication(

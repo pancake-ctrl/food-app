@@ -9,56 +9,21 @@ import { MenuData } from './menu-card';
   providedIn: 'root'
 })
 export class InformationService {
+  url = 'http://localhost:3000/menuDataList';
   readonly baseUrl = '/assets';
-  menuDataList: MenuData [] = [
-    {
-    id: 9999,
-    name: 'Tacos',
-    description: 'Lorem   ',
-    image: `${this.baseUrl}/taco.jpeg`,
-    availablity: true,
-  },
-  
-  {
-    id: 24324,
-    name: 'Fries',
-    description: 'ads',
-    image: `${this.baseUrl}/fries.jpeg`,
-    availablity: true,
-  },
-  {
-    id: 9199,
-    name: 'Pizza',
-    description: 'ads',
-    image: `${this.baseUrl}/pizza.jpeg`,
-    availablity: true,
-  },
-  {
-    id: 9929,
-    name: 'Burger',
-    description: 'ads',
-    image: `${this.baseUrl}/burger.jpeg`,
-    availablity: true,
-  },
-  {
-    id: 4233,
-    name: 'Sandwich',
-    description: 'ads',
-    image: `${this.baseUrl}/sandwich.jpeg`,
-    availablity: true,
-  }
-  ]
 
-  getAllMenuData(): MenuData [] {
-    return this.menuDataList;
+  async getAllMenuData(): Promise<MenuData[]> {
+    const data = await fetch(this.url);
+    return await data.json() ?? [];
   }
   
-  getMenuItemById(id: number): MenuData | undefined {
-    return this.menuDataList.find(menuData => menuData.id === id);
+  async getMenuItemById(id: number): Promise<MenuData> {
+    const data = await fetch(`${this.url}/${id}`);
+    return await data.json() ?? {};
   }
 
   submitApplication(firstName: string, lastName: string, email: string) {
-    console.log(`Homes application received: firstName: ${firstName}, lastName: ${lastName}, email: ${email}.`);
+    console.log(firstName, lastName, email);
   }
 
   constructor() { }
