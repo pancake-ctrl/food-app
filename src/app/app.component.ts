@@ -7,7 +7,7 @@ import { RouterModule } from '@angular/router';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [FoodComponent, RouterModule],
+  imports: [FoodComponent, RouterModule, MenuCardComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
   

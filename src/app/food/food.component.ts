@@ -41,6 +41,7 @@ export class FoodComponent {
   filterResults(text:String){
     if(!text){
       this.filteredFoodList = this.menuDataList;
+      return;
     }
 
     this.filteredFoodList = this.menuDataList.filter(food => food?.name.toLowerCase().includes(text.toLowerCase()))
