@@ -17,9 +17,13 @@ export class InformationService {
     return await data.json() ?? [];
   }
   
-  async getMenuItemById(id: number): Promise<MenuData> {
-    const data = await fetch(`${this.url}/${id}`);
-    return await data.json() ?? {};
+   async getMenuItemById(id: number): Promise<MenuData | any>  {
+    return await this.getAllMenuData().then(array=>{
+      const a = array.filter(data =>data.id == id)
+      return a;
+      
+    })
+      
   }
 
   submitApplication(firstName: string, lastName: string, email: string) {
