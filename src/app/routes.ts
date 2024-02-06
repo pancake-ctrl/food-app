@@ -2,6 +2,7 @@ import {Routes} from '@angular/router';
 import { FoodComponent } from './food/food.component';
 import { DetailsComponent } from './details/details.component';
 import { CartComponent } from './cart/cart.component';
+import { CheckoutComponent } from './checkout/checkout.component';
 
 
 const routeConfig: Routes = [
@@ -22,6 +23,12 @@ const routeConfig: Routes = [
         path: 'cart',
         component: CartComponent,
         title: 'Cart'
+    },
+
+    {
+        path: 'checkout',
+        component: CheckoutComponent,
+        title: 'Checkout'
     }
 ];
 

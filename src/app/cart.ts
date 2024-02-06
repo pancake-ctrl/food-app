@@ -1,8 +1,9 @@
 export interface Cart {
-    id: number,
-    name: string,
-    quantity: number,
-    price: number,
-    image: string
-
+  id: number;
+  name: string;
+  price: number;
+  description: string;
+  image: string;
+  availablity: boolean;
+  quantity: number;
 }
