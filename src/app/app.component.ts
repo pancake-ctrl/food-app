@@ -1,7 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy, OnInit, inject } from '@angular/core';
 import { MenuCardComponent } from './menu-card/menu-card.component';
 import { FoodComponent } from './food/food.component';
 import { RouterModule } from '@angular/router';
+import { CartService } from './cart.service';
+import { Subscription } from 'rxjs';
+
 
 
 @Component({
@@ -13,7 +16,23 @@ import { RouterModule } from '@angular/router';
   
   
 })
-export class AppComponent {
-  title = 'homes';
-  header= `Hello World`;
+export class AppComponent implements OnInit, OnDestroy{
+  cartService = inject(CartService)
+  cartSize: number;
+  cartSizeSubscription: Subscription;
+  
+
+ngOnInit(): void{
+  this.cartSizeSubscription = this.cartService.getCartItemSubject().subscribe(res=>{
+    this.cartSize = res.length
+  });
+
+  this.cartService.setCartItemSubject()
+}
+  constructor( ){}
+  ngOnDestroy(): void {
+    this.cartSizeSubscription.unsubscribe();
+  }
+
+
 }

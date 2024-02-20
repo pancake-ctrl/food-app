@@ -43,22 +43,13 @@
   ],
   "cart": [
     {
-      "id": "9999",
-      "name": "Tacos",
-      "price": 12.99,
+      "id": "9199",
+      "name": "Pizza",
+      "price": 15.99,
       "description": "Laboris dolore voluptate duis magna incididunt ullamco nulla quis commodo consectetur. Sunt ex adipisicing adipisicing culpa elit. Ut aliqua consectetur aute est nulla est quis ad ea.",
-      "image": "/assets/taco.jpeg",
+      "image": "/assets/pizza.jpeg",
       "availablity": true,
-      "quantity": 3
-    },
-    {
-      "id": "24324",
-      "name": "Fries",
-      "price": 7.99,
-      "description": "Laboris dolore voluptate duis magna incididunt ullamco nulla quis commodo consectetur. Sunt ex adipisicing adipisicing culpa elit. Ut aliqua consectetur aute est nulla est quis ad ea.",
-      "image": "/assets/fries.jpeg",
-      "availablity": true,
-      "quantity": 10
+      "quantity": 1
     }
   ]
 }

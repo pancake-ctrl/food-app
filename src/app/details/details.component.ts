@@ -135,17 +135,16 @@ export class DetailsComponent implements OnInit {
     this.cartData = this.menuData as Cart;
     this.cartData['quantity'] = this.count();
 
-    this.cartService.getCartItems().subscribe((res) => {
-    const exists = res.find((obj) => {
+    this.cartService.getCartItemSubject().subscribe((res) => {
+    const exists = res.find((obj:any) => {
       return obj.id==this.menuDataId
       }); 
 
-      console.log(exists)
       if (exists) {
         this.cartService
           .updateCartItem(this.menuDataId, this.cartData)
           .subscribe((res) => {
-            console.log('addToCart', res);
+            console.log('added to cart', res);
           });
       } else {
         this.cartService.addToCart(this.cartData).subscribe((res) => {
@@ -153,6 +152,8 @@ export class DetailsComponent implements OnInit {
         });
       }
     });
+
+    window.location.reload();
   }
 
   constructor() {}
@@ -165,12 +166,4 @@ export class DetailsComponent implements OnInit {
       });
   }
 }
-function hasKeyValuePair(
-  dataArray: any,
-  keyToCheck: any,
-  valueToCheck: any
-): void {
-  return dataArray.some(
-    (obj: { [x: string]: any }) => obj[keyToCheck] === valueToCheck
-  );
-}
+
